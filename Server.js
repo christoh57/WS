@@ -3,6 +3,7 @@ var request = require("request");
 var bodyParser = require("body-parser");
 var dps = require("dbpedia-sparql-client").default;
 var elasticsearch = require("elasticsearch");
+
 var libVar = require('./dbpediaRQ');
 
 const app = express();
@@ -17,9 +18,10 @@ var db = new elasticsearch.Client({
 
 function fillDatabase(callback) {
   var query = libVar.initDatabaseQuery;
-  
+
   dps
     .client()
+    .timeout(0) // <----- Ne pas enlever
     .query(query) 
     .asJson() 
     .then(function(r) {
@@ -39,6 +41,7 @@ function fillDatabase(callback) {
       });
 
       Promise.all(promiseall).then(function() {
+        console.log(array);
         db.bulk(
           {
             body: array
@@ -69,13 +72,14 @@ function fillDatabase(callback) {
 */
 
 function cleanDatabase(callback) {
+  
   db.delete(
     {
       index: "ws",
       type: "shows"
     },
     function(err, resp) {
-      callback;
+      callback();
     }
   );
 }
@@ -95,9 +99,6 @@ function parseQuery(query, callback) {
       })
     );
   });
-
-  //result = result.substring(0, result.length - 1);
-
   Promise.all(promises).then(function() {
     result = result.substring(0, result.length - 1);
     callback(result);
@@ -147,15 +148,6 @@ app.post("/search", function(req, res) {
   });
 });
 
-
-app.get("/",function(req,res){
-  cleanDatabase(function(){
-    fillDatabase(function(response){
-      console.log(response);
-    });
-  });
-});
-
 app.get("/fillDb", function(req, res) {
   getEntete();
 });
@@ -164,6 +156,11 @@ app.listen(4000, function() {
   console.log("Start...");
 
   console.log("sending ping");
+  cleanDatabase(function(){
+    fillDatabase(function(response){
+      console.log(response);
+    });
+  });
 
   /* 
     var myJSONObject = { 
