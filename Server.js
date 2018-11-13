@@ -3,6 +3,8 @@ var request = require("request");
 var bodyParser = require("body-parser");
 var dps = require("dbpedia-sparql-client").default;
 var elasticsearch = require("elasticsearch");
+var libVar = require('./dbpediaRQ');
+
 const app = express();
 
 app.use(bodyParser.json()); // support json encoded bodies
@@ -13,75 +15,13 @@ var db = new elasticsearch.Client({
   log: "trace"
 });
 
-app.get("/initDatabase", function(req, res) {
-  res.send("Hello World!");
-});
-
-app.post("/search", function(req, res) {
-  var searchString = req.body.aDefinirParAlex;
-
-  var data = {
-    search: "game of throne",
-    urlElastic: "http://elastic/get"
-  };
-
-  request(
-    {
-      headers: { "content-type": "application/x-www-form-urlencoded" },
-      url: "http://localhost/BDDDePierre",
-      json: true,
-      body: data
-    },
-    function(error, response, body) {
-      console.log(body);
-    }
-  );
-
-  res.send(searchString);
-});
-
 function getEntete() {
-  var query = `
-  select distinct ?uriserie ?nom (group_concat(DISTINCT ?genre,' ') as ?genres) (group_concat(DISTINCT ?actor,' ') as ?actors)
-where {
-{
-?uriserie a dbo:TelevisionShow.
- {
- ?uriserie <http://purl.org/linguistics/gold/hypernym> dbr:Series.
- ?uriserie dct:subject ?subject.
- FILTER(regex(?subject, "[Tt]elevision_series" )).
- }
-UNION
- {?uriserie  a umbel-rc:TVShow_IBT.
- ?uriserie <http://purl.org/linguistics/gold/hypernym> dbr:Series.}
-UNION
- {?uriserie  a umbel-rc:TVShow_IBT.
- ?uriserie <http://purl.org/linguistics/gold/hypernym> dbr:Opera.}
-UNION
- {?uriserie <http://purl.org/linguistics/gold/hypernym> dbr:American.
- ?uriserie dbo:numberOfSeasons ?n}
-UNION
- {?uriserie dct:subject dbc:Anime_series_based_on_manga.}
-}
-MINUS {
-?uriserie dct:subject ?subject2.
-FILTER(regex(?subject2, "[L,l]ists*_of")).
-}
-?uriserie foaf:name ?nom.
-?uriserie dbo:genre ?urigenre.
-?urigenre rdfs:label ?genre.
-FILTER(lang(?genre) = 'en')
-?uriserie dbo:starring ?uristarring.
-?uristarring rdfs:label ?actor.
-FILTER(lang(?actor) = 'en').
-} GROUP BY ?uriserie ?nom
-`;
-
+  var query = libVar.PierreQuery;
+  
   dps
     .client()
-    .query(query)
-    .timeout(15000) // optional, defaults to 10000
-    .asJson() // or asXml()
+    .query(query) 
+    .asJson() 
     .then(function(r) {
       var bindings = r.results.bindings;
       var array = [];
@@ -129,14 +69,14 @@ FILTER(lang(?actor) = 'en').
 
 */
 
-function cleanDatabase() {
+function cleanDatabase(callback) {
   db.delete(
     {
       index: "ws",
       type: "shows"
     },
     function(err, resp) {
-      console.log(resp);
+      callback;
     }
   );
 }
@@ -189,6 +129,30 @@ function dbQuery(cc, callback) {
   });
 }
 
+
+app.post("/search", function(req, res) {
+  var searchString = req.body.aDefinirParAlex;
+
+  var data = {
+    search: "game of throne",
+    urlElastic: "http://elastic/get"
+  };
+
+  request(
+    {
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+      url: "http://localhost/BDDDePierre",
+      json: true,
+      body: data
+    },
+    function(error, response, body) {
+      console.log(body);
+    }
+  );
+
+  res.send(searchString);
+});
+
 app.post("/entete", function(req, res) {
   request(
     {
@@ -209,9 +173,12 @@ app.post("/proposition", function(req, res) {
   });
 });
 
-app.get("/cleanDb", function(req, res) {
-  cleanDatabase();
-  res.body = "Database cleaned";
+
+app.get("/init",function(req,res){
+  cleanDatabase(function(){
+
+  });
+
 });
 
 app.get("/fillDb", function(req, res) {
@@ -236,25 +203,7 @@ app.listen(4000, function() {
           console.log(body);
       });
   */
-  //cleanDatabase();
+
 });
 
-/*
-  var request = require('request');
-  request.post({
-    headers: {'content-type' : 'application/x-www-form-urlencoded'},
-    url:     'http://localhost/test2.php',
-    body:    "mes=heydude"
-  }, function(error, response, body){
-    console.log(body);
-  });
 
-
-  var request = require('request');
-  request('http://www.google.com', function (error, response, body) {
-    console.log('error:', error); // Print the error if one occurred
-    console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-    console.log('body:', body); // Print the HTML for the Google homepage.
-  });
-
-*/
