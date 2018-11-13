@@ -1,0 +1,12 @@
+[2018-11-09T10:56:19,446][WARN ][o.e.d.s.ScriptModule     ] Script: returning default values for missing document values is deprecated. Set system property '-Des.scripting.exception_for_missing_value=true' to make behaviour compatible with future major versions.
+[2018-11-09T10:59:19,060][WARN ][o.e.d.c.m.MetaDataCreateIndexService] the default number of shards will change from [5] to [1] in 7.0.0; if you wish to continue using the default of [5] shards, you must manage this on the create index request or with an index template
+[2018-11-09T11:08:40,503][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] Deprecated field [template] used, replaced by [index_patterns]
+[2018-11-09T11:08:40,766][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] Deprecated field [template] used, replaced by [index_patterns]
+[2018-11-09T11:08:41,652][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] Deprecated field [template] used, replaced by [index_patterns]
+[2018-11-09T11:09:12,234][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] Deprecated field [template] used, replaced by [index_patterns]
+[2018-11-09T11:09:12,802][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] Deprecated field [template] used, replaced by [index_patterns]
+[2018-11-09T11:09:14,225][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] Deprecated field [template] used, replaced by [index_patterns]
+[2018-11-09T11:19:35,626][WARN ][o.e.d.c.ParseField       ] Deprecated field [all_fields] used, replaced by [Set [fields] to `*` instead]
+[2018-11-09T11:19:35,671][WARN ][o.e.d.c.ParseField       ] Deprecated field [inline] used, expected [source] instead
+[2018-11-11T14:45:07,860][WARN ][o.e.d.s.ScriptModule     ] Script: returning default values for missing document values is deprecated. Set system property '-Des.scripting.exception_for_missing_value=true' to make behaviour compatible with future major versions.
+[2018-11-11T15:26:08,487][WARN ][o.e.d.c.m.MetaDataCreateIndexService] the default number of shards will change from [5] to [1] in 7.0.0; if you wish to continue using the default of [5] shards, you must manage this on the create index request or with an index template

@@ -1,0 +1,167 @@
+[2018-11-09T10:12:30,398][INFO ][o.e.n.Node               ] [] initializing ...
+[2018-11-09T10:12:30,468][INFO ][o.e.e.NodeEnvironment    ] [sUyWkkK] using [1] data paths, mounts [[/ (/dev/nvme0n1p5)]], net usable_space [10.2gb], net total_space [26.2gb], types [ext4]
+[2018-11-09T10:12:30,468][INFO ][o.e.e.NodeEnvironment    ] [sUyWkkK] heap size [990.7mb], compressed ordinary object pointers [true]
+[2018-11-09T10:12:30,470][INFO ][o.e.n.Node               ] [sUyWkkK] node name derived from node ID [sUyWkkK0QdOm1tGSyJFzaQ]; set [node.name] to override
+[2018-11-09T10:12:30,471][INFO ][o.e.n.Node               ] [sUyWkkK] version[6.4.3], pid[10158], build[default/tar/fe40335/2018-10-30T23:17:19.084789Z], OS[Linux/4.15.0-36-generic/amd64], JVM[Oracle Corporation/OpenJDK 64-Bit Server VM/10.0.2/10.0.2+13-Ubuntu-1ubuntu0.18.04.2]
+[2018-11-09T10:12:30,471][INFO ][o.e.n.Node               ] [sUyWkkK] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=/tmp/elasticsearch.cC2eDBUF, -XX:+HeapDumpOnOutOfMemoryError, -XX:HeapDumpPath=data, -XX:ErrorFile=logs/hs_err_pid%p.log, -Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m, -Djava.locale.providers=COMPAT, -XX:UseAVX=2, -Des.path.home=/home/pierrefg/Desktop/elasticsearch-6.4.3, -Des.path.conf=/home/pierrefg/Desktop/elasticsearch-6.4.3/config, -Des.distribution.flavor=default, -Des.distribution.type=tar]
+[2018-11-09T10:12:31,990][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [aggs-matrix-stats]
+[2018-11-09T10:12:31,990][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [analysis-common]
+[2018-11-09T10:12:31,990][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [ingest-common]
+[2018-11-09T10:12:31,990][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [lang-expression]
+[2018-11-09T10:12:31,991][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [lang-mustache]
+[2018-11-09T10:12:31,991][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [lang-painless]
+[2018-11-09T10:12:31,991][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [mapper-extras]
+[2018-11-09T10:12:31,991][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [parent-join]
+[2018-11-09T10:12:31,991][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [percolator]
+[2018-11-09T10:12:31,991][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [rank-eval]
+[2018-11-09T10:12:31,991][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [reindex]
+[2018-11-09T10:12:31,991][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [repository-url]
+[2018-11-09T10:12:31,992][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [transport-netty4]
+[2018-11-09T10:12:31,992][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [tribe]
+[2018-11-09T10:12:31,992][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-core]
+[2018-11-09T10:12:31,992][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-deprecation]
+[2018-11-09T10:12:31,992][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-graph]
+[2018-11-09T10:12:31,992][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-logstash]
+[2018-11-09T10:12:31,992][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-ml]
+[2018-11-09T10:12:31,992][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-monitoring]
+[2018-11-09T10:12:31,993][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-rollup]
+[2018-11-09T10:12:31,993][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-security]
+[2018-11-09T10:12:31,993][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-sql]
+[2018-11-09T10:12:31,993][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-upgrade]
+[2018-11-09T10:12:31,993][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-watcher]
+[2018-11-09T10:12:31,994][INFO ][o.e.p.PluginsService     ] [sUyWkkK] no plugins loaded
+[2018-11-09T10:12:35,122][INFO ][o.e.x.s.a.s.FileRolesStore] [sUyWkkK] parsed [0] roles from file [/home/pierrefg/Desktop/elasticsearch-6.4.3/config/roles.yml]
+[2018-11-09T10:12:35,597][INFO ][o.e.x.m.j.p.l.CppLogMessageHandler] [controller/10242] [Main.cc@109] controller (64 bit): Version 6.4.3 (Build 7a0781676dd492) Copyright (c) 2018 Elasticsearch BV
+[2018-11-09T10:12:35,893][DEBUG][o.e.a.ActionModule       ] Using REST wrapper from plugin org.elasticsearch.xpack.security.Security
+[2018-11-09T10:12:36,140][INFO ][o.e.d.DiscoveryModule    ] [sUyWkkK] using discovery type [zen]
+[2018-11-09T10:12:36,879][INFO ][o.e.n.Node               ] [sUyWkkK] initialized
+[2018-11-09T10:12:36,879][INFO ][o.e.n.Node               ] [sUyWkkK] starting ...
+[2018-11-09T10:12:37,027][INFO ][o.e.t.TransportService   ] [sUyWkkK] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2018-11-09T10:12:37,042][WARN ][o.e.b.BootstrapChecks    ] [sUyWkkK] max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]
+[2018-11-09T10:12:40,100][INFO ][o.e.c.s.MasterService    ] [sUyWkkK] zen-disco-elected-as-master ([0] nodes joined)[, ], reason: new_master {sUyWkkK}{sUyWkkK0QdOm1tGSyJFzaQ}{uwVeeVueTDiBG3EnxTlR_A}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=16533704704, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true}
+[2018-11-09T10:12:40,105][INFO ][o.e.c.s.ClusterApplierService] [sUyWkkK] new_master {sUyWkkK}{sUyWkkK0QdOm1tGSyJFzaQ}{uwVeeVueTDiBG3EnxTlR_A}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=16533704704, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true}, reason: apply cluster state (from master [master {sUyWkkK}{sUyWkkK0QdOm1tGSyJFzaQ}{uwVeeVueTDiBG3EnxTlR_A}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=16533704704, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)[, ]]])
+[2018-11-09T10:12:40,146][INFO ][o.e.x.s.t.n.SecurityNetty4HttpServerTransport] [sUyWkkK] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2018-11-09T10:12:40,146][INFO ][o.e.n.Node               ] [sUyWkkK] started
+[2018-11-09T10:12:40,152][WARN ][o.e.x.s.a.s.m.NativeRoleMappingStore] [sUyWkkK] Failed to clear cache for realms [[]]
+[2018-11-09T10:12:40,215][INFO ][o.e.g.GatewayService     ] [sUyWkkK] recovered [0] indices into cluster_state
+[2018-11-09T10:12:40,428][INFO ][o.e.c.m.MetaDataIndexTemplateService] [sUyWkkK] adding template [.watches] for index patterns [.watches*]
+[2018-11-09T10:12:40,458][INFO ][o.e.c.m.MetaDataIndexTemplateService] [sUyWkkK] adding template [.triggered_watches] for index patterns [.triggered_watches*]
+[2018-11-09T10:12:40,509][INFO ][o.e.c.m.MetaDataIndexTemplateService] [sUyWkkK] adding template [.watch-history-9] for index patterns [.watcher-history-9*]
+[2018-11-09T10:12:40,539][INFO ][o.e.c.m.MetaDataIndexTemplateService] [sUyWkkK] adding template [.monitoring-logstash] for index patterns [.monitoring-logstash-6-*]
+[2018-11-09T10:12:40,573][INFO ][o.e.c.m.MetaDataIndexTemplateService] [sUyWkkK] adding template [.monitoring-es] for index patterns [.monitoring-es-6-*]
+[2018-11-09T10:12:40,598][INFO ][o.e.c.m.MetaDataIndexTemplateService] [sUyWkkK] adding template [.monitoring-alerts] for index patterns [.monitoring-alerts-6]
+[2018-11-09T10:12:40,627][INFO ][o.e.c.m.MetaDataIndexTemplateService] [sUyWkkK] adding template [.monitoring-beats] for index patterns [.monitoring-beats-6-*]
+[2018-11-09T10:12:40,655][INFO ][o.e.c.m.MetaDataIndexTemplateService] [sUyWkkK] adding template [.monitoring-kibana] for index patterns [.monitoring-kibana-6-*]
+[2018-11-09T10:12:40,731][INFO ][o.e.l.LicenseService     ] [sUyWkkK] license [86cf2417-c6a2-4aeb-90ba-d90ec67442f1] mode [basic] - valid
+[2018-11-09T10:12:48,678][INFO ][o.e.x.m.j.p.NativeController] Native controller process has stopped - no new native processes can be started
+[2018-11-09T10:12:48,681][INFO ][o.e.n.Node               ] [sUyWkkK] stopping ...
+[2018-11-09T10:12:48,695][INFO ][o.e.x.w.WatcherService   ] [sUyWkkK] stopping watch service, reason [shutdown initiated]
+[2018-11-09T10:12:49,068][INFO ][o.e.n.Node               ] [sUyWkkK] stopped
+[2018-11-09T10:12:49,069][INFO ][o.e.n.Node               ] [sUyWkkK] closing ...
+[2018-11-09T10:12:49,086][INFO ][o.e.n.Node               ] [sUyWkkK] closed
+[2018-11-09T10:32:20,688][INFO ][o.e.n.Node               ] [] initializing ...
+[2018-11-09T10:32:20,760][INFO ][o.e.e.NodeEnvironment    ] [sUyWkkK] using [1] data paths, mounts [[/ (/dev/nvme0n1p5)]], net usable_space [10.2gb], net total_space [26.2gb], types [ext4]
+[2018-11-09T10:32:20,761][INFO ][o.e.e.NodeEnvironment    ] [sUyWkkK] heap size [990.7mb], compressed ordinary object pointers [true]
+[2018-11-09T10:32:20,763][INFO ][o.e.n.Node               ] [sUyWkkK] node name derived from node ID [sUyWkkK0QdOm1tGSyJFzaQ]; set [node.name] to override
+[2018-11-09T10:32:20,763][INFO ][o.e.n.Node               ] [sUyWkkK] version[6.4.3], pid[10682], build[default/tar/fe40335/2018-10-30T23:17:19.084789Z], OS[Linux/4.15.0-36-generic/amd64], JVM[Oracle Corporation/OpenJDK 64-Bit Server VM/10.0.2/10.0.2+13-Ubuntu-1ubuntu0.18.04.2]
+[2018-11-09T10:32:20,764][INFO ][o.e.n.Node               ] [sUyWkkK] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=/tmp/elasticsearch.lIxys2El, -XX:+HeapDumpOnOutOfMemoryError, -XX:HeapDumpPath=data, -XX:ErrorFile=logs/hs_err_pid%p.log, -Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m, -Djava.locale.providers=COMPAT, -XX:UseAVX=2, -Des.path.home=/home/pierrefg/Desktop/elasticsearch-6.4.3, -Des.path.conf=/home/pierrefg/Desktop/elasticsearch-6.4.3/config, -Des.distribution.flavor=default, -Des.distribution.type=tar]
+[2018-11-09T10:32:22,347][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [aggs-matrix-stats]
+[2018-11-09T10:32:22,347][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [analysis-common]
+[2018-11-09T10:32:22,347][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [ingest-common]
+[2018-11-09T10:32:22,347][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [lang-expression]
+[2018-11-09T10:32:22,347][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [lang-mustache]
+[2018-11-09T10:32:22,348][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [lang-painless]
+[2018-11-09T10:32:22,348][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [mapper-extras]
+[2018-11-09T10:32:22,348][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [parent-join]
+[2018-11-09T10:32:22,348][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [percolator]
+[2018-11-09T10:32:22,348][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [rank-eval]
+[2018-11-09T10:32:22,348][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [reindex]
+[2018-11-09T10:32:22,348][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [repository-url]
+[2018-11-09T10:32:22,348][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [transport-netty4]
+[2018-11-09T10:32:22,349][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [tribe]
+[2018-11-09T10:32:22,349][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-core]
+[2018-11-09T10:32:22,349][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-deprecation]
+[2018-11-09T10:32:22,349][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-graph]
+[2018-11-09T10:32:22,349][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-logstash]
+[2018-11-09T10:32:22,349][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-ml]
+[2018-11-09T10:32:22,349][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-monitoring]
+[2018-11-09T10:32:22,349][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-rollup]
+[2018-11-09T10:32:22,349][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-security]
+[2018-11-09T10:32:22,350][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-sql]
+[2018-11-09T10:32:22,350][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-upgrade]
+[2018-11-09T10:32:22,350][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-watcher]
+[2018-11-09T10:32:22,350][INFO ][o.e.p.PluginsService     ] [sUyWkkK] no plugins loaded
+[2018-11-09T10:32:25,262][INFO ][o.e.x.s.a.s.FileRolesStore] [sUyWkkK] parsed [0] roles from file [/home/pierrefg/Desktop/elasticsearch-6.4.3/config/roles.yml]
+[2018-11-09T10:32:25,817][INFO ][o.e.x.m.j.p.l.CppLogMessageHandler] [controller/10765] [Main.cc@109] controller (64 bit): Version 6.4.3 (Build 7a0781676dd492) Copyright (c) 2018 Elasticsearch BV
+[2018-11-09T10:32:26,276][DEBUG][o.e.a.ActionModule       ] Using REST wrapper from plugin org.elasticsearch.xpack.security.Security
+[2018-11-09T10:32:26,602][INFO ][o.e.d.DiscoveryModule    ] [sUyWkkK] using discovery type [zen]
+[2018-11-09T10:32:27,380][INFO ][o.e.n.Node               ] [sUyWkkK] initialized
+[2018-11-09T10:32:27,381][INFO ][o.e.n.Node               ] [sUyWkkK] starting ...
+[2018-11-09T10:32:27,569][INFO ][o.e.t.TransportService   ] [sUyWkkK] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2018-11-09T10:32:27,630][WARN ][o.e.b.BootstrapChecks    ] [sUyWkkK] max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]
+[2018-11-09T10:32:30,724][INFO ][o.e.c.s.MasterService    ] [sUyWkkK] zen-disco-elected-as-master ([0] nodes joined)[, ], reason: new_master {sUyWkkK}{sUyWkkK0QdOm1tGSyJFzaQ}{-5xC6haqSu263wYsOj5zNQ}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=16533704704, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true}
+[2018-11-09T10:32:30,731][INFO ][o.e.c.s.ClusterApplierService] [sUyWkkK] new_master {sUyWkkK}{sUyWkkK0QdOm1tGSyJFzaQ}{-5xC6haqSu263wYsOj5zNQ}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=16533704704, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true}, reason: apply cluster state (from master [master {sUyWkkK}{sUyWkkK0QdOm1tGSyJFzaQ}{-5xC6haqSu263wYsOj5zNQ}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=16533704704, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)[, ]]])
+[2018-11-09T10:32:30,751][INFO ][o.e.x.s.t.n.SecurityNetty4HttpServerTransport] [sUyWkkK] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2018-11-09T10:32:30,752][INFO ][o.e.n.Node               ] [sUyWkkK] started
+[2018-11-09T10:32:31,063][WARN ][o.e.x.s.a.s.m.NativeRoleMappingStore] [sUyWkkK] Failed to clear cache for realms [[]]
+[2018-11-09T10:32:31,105][INFO ][o.e.l.LicenseService     ] [sUyWkkK] license [86cf2417-c6a2-4aeb-90ba-d90ec67442f1] mode [basic] - valid
+[2018-11-09T10:32:31,130][INFO ][o.e.g.GatewayService     ] [sUyWkkK] recovered [0] indices into cluster_state
+[2018-11-09T10:33:32,462][INFO ][o.e.x.m.j.p.NativeController] Native controller process has stopped - no new native processes can be started
+[2018-11-09T10:33:32,464][INFO ][o.e.n.Node               ] [sUyWkkK] stopping ...
+[2018-11-09T10:33:32,478][INFO ][o.e.x.w.WatcherService   ] [sUyWkkK] stopping watch service, reason [shutdown initiated]
+[2018-11-09T10:33:32,779][INFO ][o.e.n.Node               ] [sUyWkkK] stopped
+[2018-11-09T10:33:32,780][INFO ][o.e.n.Node               ] [sUyWkkK] closing ...
+[2018-11-09T10:33:32,788][INFO ][o.e.n.Node               ] [sUyWkkK] closed
+[2018-11-09T10:33:40,244][INFO ][o.e.n.Node               ] [] initializing ...
+[2018-11-09T10:33:40,335][INFO ][o.e.e.NodeEnvironment    ] [sUyWkkK] using [1] data paths, mounts [[/ (/dev/nvme0n1p5)]], net usable_space [10.2gb], net total_space [26.2gb], types [ext4]
+[2018-11-09T10:33:40,336][INFO ][o.e.e.NodeEnvironment    ] [sUyWkkK] heap size [990.7mb], compressed ordinary object pointers [true]
+[2018-11-09T10:33:40,338][INFO ][o.e.n.Node               ] [sUyWkkK] node name derived from node ID [sUyWkkK0QdOm1tGSyJFzaQ]; set [node.name] to override
+[2018-11-09T10:33:40,339][INFO ][o.e.n.Node               ] [sUyWkkK] version[6.4.3], pid[10934], build[default/tar/fe40335/2018-10-30T23:17:19.084789Z], OS[Linux/4.15.0-36-generic/amd64], JVM[Oracle Corporation/OpenJDK 64-Bit Server VM/10.0.2/10.0.2+13-Ubuntu-1ubuntu0.18.04.2]
+[2018-11-09T10:33:40,339][INFO ][o.e.n.Node               ] [sUyWkkK] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=/tmp/elasticsearch.P8tw2GIS, -XX:+HeapDumpOnOutOfMemoryError, -XX:HeapDumpPath=data, -XX:ErrorFile=logs/hs_err_pid%p.log, -Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m, -Djava.locale.providers=COMPAT, -XX:UseAVX=2, -Des.path.home=/home/pierrefg/Desktop/elasticsearch-6.4.3, -Des.path.conf=/home/pierrefg/Desktop/elasticsearch-6.4.3/config, -Des.distribution.flavor=default, -Des.distribution.type=tar]
+[2018-11-09T10:33:41,938][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [aggs-matrix-stats]
+[2018-11-09T10:33:41,938][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [analysis-common]
+[2018-11-09T10:33:41,939][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [ingest-common]
+[2018-11-09T10:33:41,939][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [lang-expression]
+[2018-11-09T10:33:41,939][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [lang-mustache]
+[2018-11-09T10:33:41,939][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [lang-painless]
+[2018-11-09T10:33:41,939][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [mapper-extras]
+[2018-11-09T10:33:41,939][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [parent-join]
+[2018-11-09T10:33:41,939][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [percolator]
+[2018-11-09T10:33:41,939][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [rank-eval]
+[2018-11-09T10:33:41,939][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [reindex]
+[2018-11-09T10:33:41,940][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [repository-url]
+[2018-11-09T10:33:41,940][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [transport-netty4]
+[2018-11-09T10:33:41,940][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [tribe]
+[2018-11-09T10:33:41,940][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-core]
+[2018-11-09T10:33:41,940][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-deprecation]
+[2018-11-09T10:33:41,940][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-graph]
+[2018-11-09T10:33:41,940][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-logstash]
+[2018-11-09T10:33:41,940][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-ml]
+[2018-11-09T10:33:41,941][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-monitoring]
+[2018-11-09T10:33:41,941][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-rollup]
+[2018-11-09T10:33:41,941][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-security]
+[2018-11-09T10:33:41,941][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-sql]
+[2018-11-09T10:33:41,941][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-upgrade]
+[2018-11-09T10:33:41,941][INFO ][o.e.p.PluginsService     ] [sUyWkkK] loaded module [x-pack-watcher]
+[2018-11-09T10:33:41,942][INFO ][o.e.p.PluginsService     ] [sUyWkkK] no plugins loaded
+[2018-11-09T10:33:45,276][INFO ][o.e.x.s.a.s.FileRolesStore] [sUyWkkK] parsed [0] roles from file [/home/pierrefg/Desktop/elasticsearch-6.4.3/config/roles.yml]
+[2018-11-09T10:33:45,612][INFO ][o.e.x.m.j.p.l.CppLogMessageHandler] [controller/11017] [Main.cc@109] controller (64 bit): Version 6.4.3 (Build 7a0781676dd492) Copyright (c) 2018 Elasticsearch BV
+[2018-11-09T10:33:45,882][DEBUG][o.e.a.ActionModule       ] Using REST wrapper from plugin org.elasticsearch.xpack.security.Security
+[2018-11-09T10:33:46,120][INFO ][o.e.d.DiscoveryModule    ] [sUyWkkK] using discovery type [zen]
+[2018-11-09T10:33:46,947][INFO ][o.e.n.Node               ] [sUyWkkK] initialized
+[2018-11-09T10:33:46,947][INFO ][o.e.n.Node               ] [sUyWkkK] starting ...
+[2018-11-09T10:33:47,131][INFO ][o.e.t.TransportService   ] [sUyWkkK] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2018-11-09T10:33:47,187][WARN ][o.e.b.BootstrapChecks    ] [sUyWkkK] max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]
+[2018-11-09T10:33:50,258][INFO ][o.e.c.s.MasterService    ] [sUyWkkK] zen-disco-elected-as-master ([0] nodes joined)[, ], reason: new_master {sUyWkkK}{sUyWkkK0QdOm1tGSyJFzaQ}{XgZFw_SNQC291-QxxtxQSQ}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=16533704704, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true}
+[2018-11-09T10:33:50,265][INFO ][o.e.c.s.ClusterApplierService] [sUyWkkK] new_master {sUyWkkK}{sUyWkkK0QdOm1tGSyJFzaQ}{XgZFw_SNQC291-QxxtxQSQ}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=16533704704, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true}, reason: apply cluster state (from master [master {sUyWkkK}{sUyWkkK0QdOm1tGSyJFzaQ}{XgZFw_SNQC291-QxxtxQSQ}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=16533704704, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)[, ]]])
+[2018-11-09T10:33:50,467][INFO ][o.e.x.s.t.n.SecurityNetty4HttpServerTransport] [sUyWkkK] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2018-11-09T10:33:50,468][INFO ][o.e.n.Node               ] [sUyWkkK] started
+[2018-11-09T10:33:50,849][WARN ][o.e.x.s.a.s.m.NativeRoleMappingStore] [sUyWkkK] Failed to clear cache for realms [[]]
+[2018-11-09T10:33:50,918][INFO ][o.e.l.LicenseService     ] [sUyWkkK] license [86cf2417-c6a2-4aeb-90ba-d90ec67442f1] mode [basic] - valid
+[2018-11-09T10:33:50,942][INFO ][o.e.g.GatewayService     ] [sUyWkkK] recovered [0] indices into cluster_state
+[2018-11-09T10:56:10,589][INFO ][o.e.x.m.j.p.NativeController] Native controller process has stopped - no new native processes can be started
+[2018-11-09T10:56:10,593][INFO ][o.e.n.Node               ] [sUyWkkK] stopping ...
+[2018-11-09T10:56:10,603][INFO ][o.e.x.w.WatcherService   ] [sUyWkkK] stopping watch service, reason [shutdown initiated]
+[2018-11-09T10:56:11,052][INFO ][o.e.n.Node               ] [sUyWkkK] stopped
+[2018-11-09T10:56:11,053][INFO ][o.e.n.Node               ] [sUyWkkK] closing ...
+[2018-11-09T10:56:11,076][INFO ][o.e.n.Node               ] [sUyWkkK] closed
