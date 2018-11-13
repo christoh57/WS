@@ -15,8 +15,8 @@ var db = new elasticsearch.Client({
   log: "trace"
 });
 
-function getEntete() {
-  var query = libVar.PierreQuery;
+function fillDatabase(callback) {
+  var query = libVar.initDatabaseQuery;
   
   dps
     .client()
@@ -39,13 +39,12 @@ function getEntete() {
       });
 
       Promise.all(promiseall).then(function() {
-        console.log(array);
         db.bulk(
           {
             body: array
           },
           function(err, resp) {
-            console.log("resp");
+            callback(resp);
           }
         );
       });
@@ -84,7 +83,6 @@ function cleanDatabase(callback) {
 function parseQuery(query, callback) {
   query = query.toLowerCase();
   var keywords = query.split(" ");
-  console.log(keywords);
   var result = "";
 
   const promises = [];
@@ -129,30 +127,6 @@ function dbQuery(cc, callback) {
   });
 }
 
-
-app.post("/search", function(req, res) {
-  var searchString = req.body.aDefinirParAlex;
-
-  var data = {
-    search: "game of throne",
-    urlElastic: "http://elastic/get"
-  };
-
-  request(
-    {
-      headers: { "content-type": "application/x-www-form-urlencoded" },
-      url: "http://localhost/BDDDePierre",
-      json: true,
-      body: data
-    },
-    function(error, response, body) {
-      console.log(body);
-    }
-  );
-
-  res.send(searchString);
-});
-
 app.post("/entete", function(req, res) {
   request(
     {
@@ -166,7 +140,7 @@ app.post("/entete", function(req, res) {
   );
 });
 
-app.post("/proposition", function(req, res) {
+app.post("/search", function(req, res) {
   var chaine = req.body.data;
   dbQuery(chaine, function(rest) {
     res.send(rest.hits);
@@ -174,11 +148,12 @@ app.post("/proposition", function(req, res) {
 });
 
 
-app.get("/init",function(req,res){
+app.get("/",function(req,res){
   cleanDatabase(function(){
-
+    fillDatabase(function(response){
+      console.log(response);
+    });
   });
-
 });
 
 app.get("/fillDb", function(req, res) {

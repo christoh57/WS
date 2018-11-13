@@ -196,7 +196,10 @@ module.exports = {
   }`,
 
 
-  PierreQuery:
+//-----------------------------
+//    Elastic search query
+//-----------------------------
+  initDatabaseQuery:
   `select distinct ?uriserie ?nom (group_concat(DISTINCT ?genre,' ') as ?genres) (group_concat(DISTINCT ?actor,' ') as ?actors)
   where {
   {
