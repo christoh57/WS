@@ -53,23 +53,9 @@ function fillDatabase(callback) {
       });
     })
     .catch(function(e) {
-      /* handle error */
+      console.log(e);
     });
 }
-
-/*
-  request({
-    url: "http://localhost:9200/ws/shows/_bulk",
-    method: "POST",
-    json: true,   // <--Very important!!!
-    body: element
-    }, function (error, response, body){
-
-        console.log("OK");
-        console.log(body);
-    });
-
-*/
 
 function askDbPedia(query,callback){
   console.log("askDbPedia");
