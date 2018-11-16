@@ -1,0 +1,4 @@
+[2018-11-15T12:32:54,613][INFO ][o.e.x.m.MlDailyMaintenanceService] triggering scheduled [ML] maintenance tasks
+[2018-11-15T12:32:54,673][INFO ][o.e.x.m.a.TransportDeleteExpiredDataAction] [vf-za_P] Deleting expired data
+[2018-11-15T12:32:54,775][INFO ][o.e.x.m.a.TransportDeleteExpiredDataAction] [vf-za_P] Completed deletion of expired data
+[2018-11-15T12:32:54,776][INFO ][o.e.x.m.MlDailyMaintenanceService] Successfully completed [ML] maintenance tasks

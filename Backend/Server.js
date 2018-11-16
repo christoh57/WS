@@ -3,6 +3,7 @@ var request = require("request");
 var bodyParser = require("body-parser");
 var dps = require("dbpedia-sparql-client").default;
 var elasticsearch = require("elasticsearch");
+
 var libVar = require('./dbpediaRQ');
 
 const app = express();
@@ -15,11 +16,12 @@ var db = new elasticsearch.Client({
   log: "trace"
 });
 
-function getEntete() {
-  var query = libVar.PierreQuery;
-  
+function fillDatabase(callback) {
+  var query = libVar.initDatabaseQuery;
+
   dps
     .client()
+    .timeout(0) // <----- Ne pas enlever
     .query(query) 
     .asJson() 
     .then(function(r) {
@@ -45,9 +47,9 @@ function getEntete() {
             body: array
           },
           function(err, resp) {
-            console.log("resp");
+            callback(resp);
           }
-        );
+        );   
       });
     })
     .catch(function(e) {
@@ -69,14 +71,172 @@ function getEntete() {
 
 */
 
+function askDbPedia(query,callback){
+  console.log("askDbPedia");
+  dps
+    .client()
+    .timeout(0) // <----- Ne pas enlever
+    .query(query) 
+    .asJson() 
+    .then(function(r) {
+      callback(r);
+    })
+    .catch(function(e) {});
+}
+
+function retrieveDataAccordingToURI(URI,callback){
+  const promisall = [];
+
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.abstractFromSerie.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.getRuntimeForData.replace("Clangers",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.getWikiNameOfUriInAllLanguage.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.linkToOfficialSeriePage.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.ressourceName.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.retrieveActorFromSerie.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.retrieveCreatorFromSerie.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.retrieveDiffusionChannel.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.retrieveEpisodeNumberFromSerie.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.retrieveLinkLogoFromSerie.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.retrieveOriginCountryFromSerie.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.retrieveProductionSociety.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.retrieveRealisatorFromSerie.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.retrieveSaisonNumberFromSerie.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.retrieveSerieMusicCompositor.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.retrieveStartDateFromSerie.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.serieTypeAccordingToLanguage.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.wikiNameAccordingToLanguage.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+
+  promisall.push(new Promise(function(resolve,reject){
+    askDbPedia(libVar.wikiRealisatorFromSerie.replace("Friends",URI),
+    function(r){
+      resolve(r)
+    });
+  }));
+ 
+  Promise.all(promisall).then(function(array){
+    console.log(array);
+    callback(array);
+  });
+
+}
+
 function cleanDatabase(callback) {
+  
   db.delete(
     {
       index: "ws",
       type: "shows"
     },
     function(err, resp) {
-      callback;
+      callback();
     }
   );
 }
@@ -84,7 +244,6 @@ function cleanDatabase(callback) {
 function parseQuery(query, callback) {
   query = query.toLowerCase();
   var keywords = query.split(" ");
-  console.log(keywords);
   var result = "";
 
   const promises = [];
@@ -97,11 +256,11 @@ function parseQuery(query, callback) {
       })
     );
   });
-
-  //result = result.substring(0, result.length - 1);
-
   Promise.all(promises).then(function() {
+
+    console.log(result);
     result = result.substring(0, result.length - 1);
+    console.log(result);
     callback(result);
   });
 }
@@ -122,7 +281,6 @@ function dbQuery(cc, callback) {
         }
       },
       function(err, resp) {
-        console.log(resp);
         callback(resp);
       }
     );
@@ -130,65 +288,30 @@ function dbQuery(cc, callback) {
 }
 
 
+
 app.post("/search", function(req, res) {
-  var searchString = req.body.aDefinirParAlex;
-
-  var data = {
-    search: "game of throne",
-    urlElastic: "http://elastic/get"
-  };
-
-  request(
-    {
-      headers: { "content-type": "application/x-www-form-urlencoded" },
-      url: "http://localhost/BDDDePierre",
-      json: true,
-      body: data
-    },
-    function(error, response, body) {
-      console.log(body);
-    }
-  );
-
-  res.send(searchString);
-});
-
-app.post("/entete", function(req, res) {
-  request(
-    {
-      headers: { "content-type": "application/x-www-form-urlencoded" },
-      url: "http://localhost/BDDDePierre"
-    },
-    function(error, response, body) {
-      console.log(body._shards.hits);
-      res.send(body._shards.hits);
-    }
-  );
-});
-
-app.post("/proposition", function(req, res) {
   var chaine = req.body.data;
   dbQuery(chaine, function(rest) {
-    res.send(rest.hits);
+    res.send(rest);
   });
 });
 
-
-app.get("/init",function(req,res){
-  cleanDatabase(function(){
-
+app.post("/getDataFromUri", function(req, res) {
+  retrieveDataAccordingToURI(req.body.data,function(data){
+    res.send(data);
   });
-
 });
 
-app.get("/fillDb", function(req, res) {
-  getEntete();
-});
 
 app.listen(4000, function() {
   console.log("Start...");
 
   console.log("sending ping");
+  cleanDatabase(function(){
+    fillDatabase(function(response){
+      console.log(response);
+    });
+  });
 
   /* 
     var myJSONObject = { 
