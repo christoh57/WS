@@ -1,0 +1,9 @@
+[2018-11-16T09:01:13,174][WARN ][o.e.d.c.m.MetaDataCreateIndexService] [vVSVa5x] the default number of shards will change from [5] to [1] in 7.0.0; if you wish to continue using the default of [5] shards, you must manage this on the create index request or with an index template
+[2018-11-16T09:01:31,498][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] [vVSVa5x] Deprecated field [template] used, replaced by [index_patterns]
+[2018-11-16T09:01:31,509][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] [vVSVa5x] Deprecated field [template] used, replaced by [index_patterns]
+[2018-11-16T09:01:47,191][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] [vVSVa5x] Deprecated field [template] used, replaced by [index_patterns]
+[2018-11-16T09:02:13,855][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] [vVSVa5x] Deprecated field [template] used, replaced by [index_patterns]
+[2018-11-16T09:02:14,368][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] [vVSVa5x] Deprecated field [template] used, replaced by [index_patterns]
+[2018-11-16T09:02:15,675][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] [vVSVa5x] Deprecated field [template] used, replaced by [index_patterns]
+[2018-11-16T09:02:33,218][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] [vVSVa5x] Deprecated field [template] used, replaced by [index_patterns]
+[2018-11-16T09:03:38,672][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] [vVSVa5x] Deprecated field [template] used, replaced by [index_patterns]
