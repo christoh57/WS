@@ -21,7 +21,7 @@ function fillDatabase(callback) {
 
   dps
     .client()
-    .timeout(100000) // <----- Ne pas enlever
+    .timeout(0) // <----- Ne pas enlever
     .query(query)
     .asJson()
     .then(function(r) {
@@ -72,10 +72,10 @@ function askDbPedia(query, callback) {
 
 function retrieveDataAccordingToURI(URI, callback) {
   const promisall = [];
-
+  URI = "<" +URI +">";
   promisall.push(
     new Promise(function(resolve, reject) {
-      askDbPedia(libVar.abstractFromSerie.replace("Friends", URI), function(r) {
+      askDbPedia(libVar.abstractFromSerie.replace("dbr:Friends", URI), function(r) {
         resolve(r.results.bindings);
       });
     })
@@ -83,7 +83,7 @@ function retrieveDataAccordingToURI(URI, callback) {
 
   promisall.push(
     new Promise(function(resolve, reject) {
-      askDbPedia(libVar.getRuntimeForData.replace("Clangers", URI), function(
+      askDbPedia(libVar.getRuntimeForData.replace("dbr:Clangers", URI), function(
         r
       ) {
         resolve(r.results.bindings);
@@ -94,7 +94,7 @@ function retrieveDataAccordingToURI(URI, callback) {
   promisall.push(
     new Promise(function(resolve, reject) {
       askDbPedia(
-        libVar.linkToOfficialSeriePage.replace("Friends", URI),
+        libVar.linkToOfficialSeriePage.replace("dbr:Friends", URI),
         function(r) {
           resolve(r.results.bindings);
         }
@@ -104,7 +104,7 @@ function retrieveDataAccordingToURI(URI, callback) {
 
   promisall.push(
     new Promise(function(resolve, reject) {
-      askDbPedia(libVar.ressourceName.replace("Friends", URI), function(r) {
+      askDbPedia(libVar.ressourceName.replace("dbr:Friends", URI), function(r) {
         resolve(r.results.bindings);
       });
     })
@@ -113,7 +113,7 @@ function retrieveDataAccordingToURI(URI, callback) {
   promisall.push(
     new Promise(function(resolve, reject) {
       askDbPedia(
-        libVar.retrieveActorFromSerie.replace("Friends", URI),
+        libVar.retrieveActorFromSerie.replace("dbr:Friends", URI),
         function(r) {
           resolve(r.results.bindings);
         }
@@ -124,7 +124,7 @@ function retrieveDataAccordingToURI(URI, callback) {
   promisall.push(
     new Promise(function(resolve, reject) {
       askDbPedia(
-        libVar.retrieveCreatorFromSerie.replace("Friends", URI),
+        libVar.retrieveCreatorFromSerie.replace("dbr:Friends", URI),
         function(r) {
           resolve(r.results.bindings);
         }
@@ -135,7 +135,7 @@ function retrieveDataAccordingToURI(URI, callback) {
   promisall.push(
     new Promise(function(resolve, reject) {
       askDbPedia(
-        libVar.retrieveDiffusionChannel.replace("Friends", URI),
+        libVar.retrieveDiffusionChannel.replace("dbr:Friends", URI),
         function(r) {
           resolve(r.results.bindings);
         }
@@ -146,7 +146,7 @@ function retrieveDataAccordingToURI(URI, callback) {
   promisall.push(
     new Promise(function(resolve, reject) {
       askDbPedia(
-        libVar.retrieveEpisodeNumberFromSerie.replace("Friends", URI),
+        libVar.retrieveEpisodeNumberFromSerie.replace("dbr:Friends", URI),
         function(r) {
           resolve(r.results.bindings);
         }
@@ -157,7 +157,7 @@ function retrieveDataAccordingToURI(URI, callback) {
   promisall.push(
     new Promise(function(resolve, reject) {
       askDbPedia(
-        libVar.retrieveLinkLogoFromSerie.replace("Friends", URI),
+        libVar.retrieveLinkLogoFromSerie.replace("dbr:Friends", URI),
         function(r) {
           resolve(r.results.bindings);
         }
@@ -168,7 +168,7 @@ function retrieveDataAccordingToURI(URI, callback) {
   promisall.push(
     new Promise(function(resolve, reject) {
       askDbPedia(
-        libVar.retrieveOriginCountryFromSerie.replace("Friends", URI),
+        libVar.retrieveOriginCountryFromSerie.replace("dbr:Friends", URI),
         function(r) {
           resolve(r.results.bindings);
         }
@@ -179,7 +179,7 @@ function retrieveDataAccordingToURI(URI, callback) {
   promisall.push(
     new Promise(function(resolve, reject) {
       askDbPedia(
-        libVar.retrieveProductionSociety.replace("Friends", URI),
+        libVar.retrieveProductionSociety.replace("dbr:Friends", URI),
         function(r) {
           resolve(r.results.bindings);
         }
@@ -190,7 +190,7 @@ function retrieveDataAccordingToURI(URI, callback) {
   promisall.push(
     new Promise(function(resolve, reject) {
       askDbPedia(
-        libVar.retrieveRealisatorFromSerie.replace("Friends", URI),
+        libVar.retrieveRealisatorFromSerie.replace("dbr:Friends", URI),
         function(r) {
           resolve(r.results.bindings);
         }
@@ -201,7 +201,7 @@ function retrieveDataAccordingToURI(URI, callback) {
   promisall.push(
     new Promise(function(resolve, reject) {
       askDbPedia(
-        libVar.retrieveSaisonNumberFromSerie.replace("Friends", URI),
+        libVar.retrieveSaisonNumberFromSerie.replace("dbr:Friends", URI),
         function(r) {
           resolve(r.results.bindings);
         }
@@ -212,7 +212,7 @@ function retrieveDataAccordingToURI(URI, callback) {
   promisall.push(
     new Promise(function(resolve, reject) {
       askDbPedia(
-        libVar.retrieveSerieMusicCompositor.replace("Friends", URI),
+        libVar.retrieveSerieMusicCompositor.replace("dbr:Friends", URI),
         function(r) {
           resolve(r.results.bindings);
         }
@@ -223,7 +223,7 @@ function retrieveDataAccordingToURI(URI, callback) {
   promisall.push(
     new Promise(function(resolve, reject) {
       askDbPedia(
-        libVar.retrieveStartDateFromSerie.replace("Friends", URI),
+        libVar.retrieveStartDateFromSerie.replace("dbr:Friends", URI),
         function(r) {
           resolve(r.results.bindings);
         }
@@ -234,7 +234,7 @@ function retrieveDataAccordingToURI(URI, callback) {
   promisall.push(
     new Promise(function(resolve, reject) {
       askDbPedia(
-        libVar.serieTypeAccordingToLanguage.replace("Friends", URI),
+        libVar.serieTypeAccordingToLanguage.replace("dbr:Friends", URI),
         function(r) {
           resolve(r.results.bindings);
         }
@@ -245,7 +245,7 @@ function retrieveDataAccordingToURI(URI, callback) {
   promisall.push(
     new Promise(function(resolve, reject) {
       askDbPedia(
-        libVar.wikiNameAccordingToLanguage.replace("Friends", URI),
+        libVar.wikiNameAccordingToLanguage.replace("dbr:Friends", URI),
         function(r) {
           resolve(r.results.bindings);
         }
@@ -256,7 +256,7 @@ function retrieveDataAccordingToURI(URI, callback) {
   promisall.push(
     new Promise(function(resolve, reject) {
       askDbPedia(
-        libVar.wikiRealisatorFromSerie.replace("Friends", URI),
+        libVar.wikiRealisatorFromSerie.replace("dbr:Friends", URI),
         function(r) {
           resolve(r.results.bindings);
         }
@@ -402,21 +402,21 @@ function dbQueryName(cc, callback) {
 app.post("/searchName", function(req, res) {
   var chaine = req.body.data;
   dbQueryName(chaine, function(rest) {
-    res.send(rest);
+    res.send(rest.hits);
   });
 });
 
 app.post("/searchActor", function(req, res) {
   var chaine = req.body.data;
   dbQueryActor(chaine, function(rest) {
-    res.send(rest);
+    res.send(rest.hits);
   });
 });
 
 app.post("/searchCategorie", function(req, res) {
   var chaine = req.body.data;
   dbQueryCategorie(chaine, function(rest) {
-    res.send(rest);
+    res.send(rest.hits);
   });
 });
 
