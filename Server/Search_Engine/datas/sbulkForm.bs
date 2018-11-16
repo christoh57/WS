@@ -1,1 +1,0 @@
-jq -c -r ".results.bindings | .[]" rawData.json | while read line; do echo '{"index":{}}'; echo $line; done > bulk.json
