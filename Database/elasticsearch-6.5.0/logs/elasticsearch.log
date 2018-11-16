@@ -1,0 +1,54 @@
+[2018-11-16T08:59:46,336][INFO ][o.e.e.NodeEnvironment    ] [vVSVa5x] using [1] data paths, mounts [[/ (/dev/nvme0n1p5)]], net usable_space [5.6gb], net total_space [26.2gb], types [ext4]
+[2018-11-16T08:59:46,339][INFO ][o.e.e.NodeEnvironment    ] [vVSVa5x] heap size [990.7mb], compressed ordinary object pointers [true]
+[2018-11-16T08:59:46,341][INFO ][o.e.n.Node               ] [vVSVa5x] node name derived from node ID [vVSVa5xtQjKaZFsLupITkQ]; set [node.name] to override
+[2018-11-16T08:59:46,341][INFO ][o.e.n.Node               ] [vVSVa5x] version[6.5.0], pid[5631], build[default/tar/816e6f6/2018-11-09T18:58:36.352602Z], OS[Linux/4.15.0-38-generic/amd64], JVM[Oracle Corporation/OpenJDK 64-Bit Server VM/10.0.2/10.0.2+13-Ubuntu-1ubuntu0.18.04.3]
+[2018-11-16T08:59:46,341][INFO ][o.e.n.Node               ] [vVSVa5x] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=/tmp/elasticsearch.cpAX0fKB, -XX:+HeapDumpOnOutOfMemoryError, -XX:HeapDumpPath=data, -XX:ErrorFile=logs/hs_err_pid%p.log, -Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m, -Djava.locale.providers=COMPAT, -XX:UseAVX=2, -Des.path.home=/home/pierrefg/Desktop/WS/Database/elasticsearch-6.5.0, -Des.path.conf=/home/pierrefg/Desktop/WS/Database/elasticsearch-6.5.0/config, -Des.distribution.flavor=default, -Des.distribution.type=tar]
+[2018-11-16T08:59:47,905][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [aggs-matrix-stats]
+[2018-11-16T08:59:47,905][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [analysis-common]
+[2018-11-16T08:59:47,905][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [ingest-common]
+[2018-11-16T08:59:47,906][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [lang-expression]
+[2018-11-16T08:59:47,906][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [lang-mustache]
+[2018-11-16T08:59:47,906][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [lang-painless]
+[2018-11-16T08:59:47,906][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [mapper-extras]
+[2018-11-16T08:59:47,906][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [parent-join]
+[2018-11-16T08:59:47,906][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [percolator]
+[2018-11-16T08:59:47,906][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [rank-eval]
+[2018-11-16T08:59:47,906][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [reindex]
+[2018-11-16T08:59:47,907][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [repository-url]
+[2018-11-16T08:59:47,907][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [transport-netty4]
+[2018-11-16T08:59:47,907][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [tribe]
+[2018-11-16T08:59:47,907][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [x-pack-ccr]
+[2018-11-16T08:59:47,907][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [x-pack-core]
+[2018-11-16T08:59:47,907][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [x-pack-deprecation]
+[2018-11-16T08:59:47,907][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [x-pack-graph]
+[2018-11-16T08:59:47,907][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [x-pack-logstash]
+[2018-11-16T08:59:47,907][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [x-pack-ml]
+[2018-11-16T08:59:47,908][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [x-pack-monitoring]
+[2018-11-16T08:59:47,908][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [x-pack-rollup]
+[2018-11-16T08:59:47,908][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [x-pack-security]
+[2018-11-16T08:59:47,908][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [x-pack-sql]
+[2018-11-16T08:59:47,908][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [x-pack-upgrade]
+[2018-11-16T08:59:47,908][INFO ][o.e.p.PluginsService     ] [vVSVa5x] loaded module [x-pack-watcher]
+[2018-11-16T08:59:47,909][INFO ][o.e.p.PluginsService     ] [vVSVa5x] no plugins loaded
+[2018-11-16T08:59:50,778][INFO ][o.e.x.s.a.s.FileRolesStore] [vVSVa5x] parsed [0] roles from file [/home/pierrefg/Desktop/WS/Database/elasticsearch-6.5.0/config/roles.yml]
+[2018-11-16T08:59:51,207][INFO ][o.e.x.m.j.p.l.CppLogMessageHandler] [vVSVa5x] [controller/5715] [Main.cc@109] controller (64 bit): Version 6.5.0 (Build 71882a589e5556) Copyright (c) 2018 Elasticsearch BV
+[2018-11-16T08:59:51,628][DEBUG][o.e.a.ActionModule       ] [vVSVa5x] Using REST wrapper from plugin org.elasticsearch.xpack.security.Security
+[2018-11-16T08:59:51,888][INFO ][o.e.d.DiscoveryModule    ] [vVSVa5x] using discovery type [zen] and host providers [settings]
+[2018-11-16T08:59:52,645][INFO ][o.e.n.Node               ] [vVSVa5x] initialized
+[2018-11-16T08:59:52,645][INFO ][o.e.n.Node               ] [vVSVa5x] starting ...
+[2018-11-16T08:59:52,810][INFO ][o.e.t.TransportService   ] [vVSVa5x] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2018-11-16T08:59:55,879][INFO ][o.e.c.s.MasterService    ] [vVSVa5x] zen-disco-elected-as-master ([0] nodes joined), reason: new_master {vVSVa5x}{vVSVa5xtQjKaZFsLupITkQ}{SQpB85H3RFuVvVuggvf1Hg}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=16533704704, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true}
+[2018-11-16T08:59:55,884][INFO ][o.e.c.s.ClusterApplierService] [vVSVa5x] new_master {vVSVa5x}{vVSVa5xtQjKaZFsLupITkQ}{SQpB85H3RFuVvVuggvf1Hg}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=16533704704, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true}, reason: apply cluster state (from master [master {vVSVa5x}{vVSVa5xtQjKaZFsLupITkQ}{SQpB85H3RFuVvVuggvf1Hg}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=16533704704, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)]])
+[2018-11-16T08:59:55,925][INFO ][o.e.x.s.t.n.SecurityNetty4HttpServerTransport] [vVSVa5x] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2018-11-16T08:59:55,926][INFO ][o.e.n.Node               ] [vVSVa5x] started
+[2018-11-16T08:59:55,957][WARN ][o.e.x.s.a.s.m.NativeRoleMappingStore] [vVSVa5x] Failed to clear cache for realms [[]]
+[2018-11-16T08:59:56,037][INFO ][o.e.g.GatewayService     ] [vVSVa5x] recovered [0] indices into cluster_state
+[2018-11-16T08:59:56,218][INFO ][o.e.c.m.MetaDataIndexTemplateService] [vVSVa5x] adding template [.triggered_watches] for index patterns [.triggered_watches*]
+[2018-11-16T08:59:56,250][INFO ][o.e.c.m.MetaDataIndexTemplateService] [vVSVa5x] adding template [.watches] for index patterns [.watches*]
+[2018-11-16T08:59:56,299][INFO ][o.e.c.m.MetaDataIndexTemplateService] [vVSVa5x] adding template [.watch-history-9] for index patterns [.watcher-history-9*]
+[2018-11-16T08:59:56,338][INFO ][o.e.c.m.MetaDataIndexTemplateService] [vVSVa5x] adding template [.monitoring-logstash] for index patterns [.monitoring-logstash-6-*]
+[2018-11-16T08:59:56,395][INFO ][o.e.c.m.MetaDataIndexTemplateService] [vVSVa5x] adding template [.monitoring-es] for index patterns [.monitoring-es-6-*]
+[2018-11-16T08:59:56,425][INFO ][o.e.c.m.MetaDataIndexTemplateService] [vVSVa5x] adding template [.monitoring-alerts] for index patterns [.monitoring-alerts-6]
+[2018-11-16T08:59:56,464][INFO ][o.e.c.m.MetaDataIndexTemplateService] [vVSVa5x] adding template [.monitoring-beats] for index patterns [.monitoring-beats-6-*]
+[2018-11-16T08:59:56,497][INFO ][o.e.c.m.MetaDataIndexTemplateService] [vVSVa5x] adding template [.monitoring-kibana] for index patterns [.monitoring-kibana-6-*]
+[2018-11-16T08:59:56,602][INFO ][o.e.l.LicenseService     ] [vVSVa5x] license [56f19332-2a18-4bd7-8e06-c1f8bbd4c2be] mode [basic] - valid
