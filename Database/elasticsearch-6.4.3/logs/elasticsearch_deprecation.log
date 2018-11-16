@@ -9,3 +9,4 @@
 [2018-11-13T10:16:24,372][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] Deprecated field [template] used, replaced by [index_patterns]
 [2018-11-13T10:16:25,322][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] Deprecated field [template] used, replaced by [index_patterns]
 [2018-11-13T10:16:26,848][WARN ][o.e.d.a.a.i.t.p.PutIndexTemplateRequest] Deprecated field [template] used, replaced by [index_patterns]
+[2018-11-16T10:05:08,257][WARN ][o.e.d.s.ScriptModule     ] Script: returning default values for missing document values is deprecated. Set system property '-Des.scripting.exception_for_missing_value=true' to make behaviour compatible with future major versions.

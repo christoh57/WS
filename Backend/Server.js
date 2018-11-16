@@ -279,7 +279,7 @@ function parseQuery(query, callback) {
   });
 }
 
-function dbQuery(cc, categorie ,callback) {
+function dbQuery(cc,callback) {
   parseQuery(cc, function(queryString) {
     db.search(
       {
@@ -305,8 +305,9 @@ function dbQuery(cc, categorie ,callback) {
 
 app.post("/search", function(req, res) {
   var chaine = req.body.data;
-  var categorie = req.body.categorie;
-  dbQuery(chaine,categorie, function(rest) {
+
+  dbQuery(chaine, function(rest) {
+    console.log(rest);
     res.send(rest);
   });
 });
