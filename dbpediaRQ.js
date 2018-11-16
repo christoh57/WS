@@ -1,19 +1,4 @@
 module.exports = {
-  //Lien Wiki de toutes les séries d’un acteur
-  allWikiSeriesFromActor: `select *
-    where {
-    ?uri a dbo:TelevisionShow.
-    ?uri dbo:starring dbr:Jennifer_Aniston.
-    ?uri foaf:isPrimaryTopicOf ?wikilink.
-     }`,
-
-  //Lien Wiki des acteurs d’une série
-  wikiOfActorFromSerie: `select *
-    where {
-    dbr:Friends dbo:starring ?uri.
-    ?uri foaf:isPrimaryTopicOf ?wikilink.
-    }`,
-
   //Abstract d’une série selon la langue
   abstractFromSerie: `select *
     where {
@@ -53,12 +38,6 @@ module.exports = {
         }
     }`,
 
-  //Récupérer lien wiki d’une URI
-  retrieveWikiLinkFromURI: 
-  `select *
-  where {
-  dbr:Jennifer_Aniston foaf:isPrimaryTopicOf ?wikilink
-  }`,
 
   //Récupérer le nom wikipédia d’une URI dans toutes les langues
   getWikiNameOfUriInAllLanguage:
