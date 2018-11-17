@@ -315,5 +315,6 @@ module.exports = {
   
   }
   
-  }`
+  }
+  ORDER BY ?names`
 };

@@ -292,13 +292,17 @@ function retrieveDataAccordingToURI(URI, callback) {
 }
 
 function cleanDatabase(callback) {
-  db.delete(
-    {
-      index: "ws",
-      type: "shows"
-    },
+  db.deleteByQuery({
+    index: 'ws',
+    body: {
+      query: {
+        match_all: {}
+      }
+    }
+  },
     function(err, resp) {
-      callback();
+      console.log(resp);
+      callback(resp);
     }
   );
 }
@@ -361,7 +365,7 @@ function dbQueryCategorie(cc, callback) {
         size: 30,
         query: {
           match: {
-            "nom.value": {
+            "names.value": {
               query: cc.toLowerCase(),
               fuzziness: 2
             }
@@ -385,7 +389,7 @@ function dbQueryName(cc, callback) {
         size: 30,
         query: {
           match: {
-            "nom.value": {
+            "names.value": {
               query: cc.toLowerCase(),
               fuzziness: 2
             }
@@ -426,8 +430,20 @@ app.post("/getDataFromUri", function(req, res) {
   });
 });
 
+app.get("/cleanDatabase", function(req, res) {
+  cleanDatabase(function(resp) {
+    res.send(resp);
+  });
+});
+
+app.get("/fillDatabase", function(req, res) {
+  fillDatabase(function(resp) {
+    res.send(resp);
+  });
+});
+
 app.listen(4000, function() {
-  console.log("Start...");
+  console.log("Server starting on : http://localhost:4000");
 
   console.log("sending ping");
   cleanDatabase(function() {
