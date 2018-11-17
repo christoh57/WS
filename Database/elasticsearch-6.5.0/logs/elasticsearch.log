@@ -343,3 +343,4 @@ org.elasticsearch.common.util.concurrent.EsRejectedExecutionException: rejected 
 [2018-11-17T14:46:24,593][INFO ][o.e.c.m.MetaDataIndexTemplateService] [vVSVa5x] adding template [kibana_index_template:.kibana] for index patterns [.kibana]
 [2018-11-17T14:46:25,585][INFO ][o.e.c.m.MetaDataIndexTemplateService] [vVSVa5x] adding template [kibana_index_template:.kibana] for index patterns [.kibana]
 [2018-11-17T14:46:26,813][INFO ][o.e.c.m.MetaDataIndexTemplateService] [vVSVa5x] adding template [kibana_index_template:.kibana] for index patterns [.kibana]
+[2018-11-17T15:44:20,432][INFO ][o.e.c.m.MetaDataIndexTemplateService] [vVSVa5x] adding template [kibana_index_template:.kibana] for index patterns [.kibana]

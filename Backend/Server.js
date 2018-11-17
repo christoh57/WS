@@ -16,9 +16,12 @@ var db = new elasticsearch.Client({
   log: "trace"
 });
 
-function fillDatabase(callback) {
+function fillDatabase(nb, callback) {
   var query = libVar.initDatabaseQuery;
-
+  if(nb===1){
+    query+=" OFFSET 10000";
+    console.log(query);
+  }
   dps
     .client()
     .timeout(0) // <----- Ne pas enlever
@@ -447,8 +450,11 @@ app.listen(4000, function() {
 
   console.log("sending ping");
   cleanDatabase(function() {
-    fillDatabase(function(response) {
+    fillDatabase(0, function(response) {
       console.log(response);
+      fillDatabase(1, function(response2) {
+        console.log(response2);
+      });
     });
   });
 });
