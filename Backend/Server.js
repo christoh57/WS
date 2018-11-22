@@ -344,7 +344,7 @@ function dbQueryActor(cc, callback) {
         size: 30,
         query: {
           match: {
-            "actor.value": {
+            "actors.value": {
               query: cc.toLowerCase(),
               operator: "and",
               fuzziness: 2
@@ -369,8 +369,9 @@ function dbQueryCategorie(cc, callback) {
         size: 30,
         query: {
           match: {
-            "names.value": {
+            "genres.value": {
               query: cc.toLowerCase(),
+              operator: "and",
               fuzziness: 2
             }
           }
