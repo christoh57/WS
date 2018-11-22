@@ -3,11 +3,12 @@ var request = require("request");
 var bodyParser = require("body-parser");
 var dps = require("dbpedia-sparql-client").default;
 var elasticsearch = require("elasticsearch");
+var cors = require('cors')
 
 var libVar = require("./dbpediaRQ");
 
 const app = express();
-
+app.use(cors())
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
