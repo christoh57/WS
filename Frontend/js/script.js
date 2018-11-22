@@ -26,12 +26,12 @@ function dropdown() {
         var url = '';
 
         switch(currentFilter) {
-            case "Catégorie": {
+            case "Genre": {
                 //Requête avec la cétégorie
                 url = "http://localhost:4000/searchCategorie";
                 break;
             }
-            case "Nom": {
+            case "Name": {
                 //Requête avec le nom
                 url = "http://localhost:4000/searchName";
                 break;
